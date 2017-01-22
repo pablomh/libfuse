@@ -26,6 +26,11 @@ for CC in gcc gcc-6 clang; do
     TEST_WITH_VALGRIND=true ninja tests
     cd ..
 done
+echo "====== CLANG LOG ======="
+cat build-clang/meson-logs/meson-log.txt
+echo "====== GCC LOG ======="
+cat build-gcc/meson-logs/meson-log.txt
+
 (cd build-$CC; sudo ninja install)
 
 # Sanitized build
